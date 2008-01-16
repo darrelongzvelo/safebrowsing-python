@@ -62,7 +62,7 @@ False
 ===Using Django Models Field===
 
 {{{
->>> from safe_browsing.fields import Safe_URLField
+>>> from safe_url_django.fields import Safe_URLField
 >>> from django.db import models
 >>> class URL_Model(models.Model):
 ...     badware_url_test = Safe_URLField(verify_exists=True, verbose_name="URL Field", badware_check=True)
