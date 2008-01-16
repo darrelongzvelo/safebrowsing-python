@@ -11,8 +11,8 @@ Usage of the List Preparation script
 >>> from prepare_db import Google_Blacklist
 >>>
 >>> data_url = "http://sb.google.com/safebrowsing/update?client=api&apikey=${key}&version=goog-${badware_type}-hash:${version}"
-# "M" for malware and "B" for Blacklist
->>> g = Google_Blacklist("api_key",data_url,db_path,"M")
+# "malware" and "black" are valid options
+>>> g = Google_Blacklist("api_key",data_url,db_path,"malware")
 >>> g.fetch_data()
 }}}
 
