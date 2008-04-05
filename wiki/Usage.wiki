@@ -28,7 +28,7 @@ Usage of the lookup library is very simple.
 >>> l = Lookup("path_to_sqlite_db")
 >>> l.lookup_by_url("http://thejaswi.info/")
 >>>
->>> l.lookup_by_url("www.fxmp3.com")
+>>> l.lookup_by_url("www.somemalwaresite.com")
 'M'
 >>>
 }}}
@@ -51,7 +51,7 @@ True
 {}
 >>> f.cleaned_data
 {'url_field': u'http://thejaswi.info/'}
->>> data2={"url_field": u"www.fxmp3.com"}
+>>> data2={"url_field": u"www.somemalwaresite.com"}
 >>> g=Test_Form(data2)
 >>> g.is_valid()
 False
