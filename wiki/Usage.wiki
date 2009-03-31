@@ -3,16 +3,19 @@
 
 = Introduction =
 
+===Fill Database and API Key===
+
+  * Fill the safebrowsing/conf.py parameters.
+
 ===Preparing Db===
 
 Usage of the List Preparation script
 
 {{{
->>> from prepare_db import Google_Blacklist
+>>> from safebrowsing.prepare_db import Google_Blacklist
 >>>
->>> data_url = "http://sb.google.com/safebrowsing/update?client=api&apikey=${key}&version=goog-${badware_type}-hash:${version}"
 # "malware" and "black" are valid options
->>> g = Google_Blacklist("api_key",data_url,db_path,"malware")
+>>> g = Google_Blacklist("malware")
 >>> g.fetch_data()
 }}}
 
@@ -23,9 +26,9 @@ For information regarding the SQL schema used for the database, click [SQLSchema
 Usage of the lookup library is very simple.
 
 {{{
->>> from query_lookup import Lookup
+>>> from safebrowsing.query_lookup import Lookup
 >>>
->>> l = Lookup("path_to_sqlite_db")
+>>> l = Lookup()
 >>> l.lookup_by_url("http://thejaswi.info/")
 >>>
 >>> l.lookup_by_url("www.somemalwaresite.com")
