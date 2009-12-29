@@ -1,0 +1,33 @@
+#summary The available database backends at the moment.
+#labels Featured
+
+Here is the list of currently supported database backends:
+  * Sqlite
+  * Mysql
+  * Postgresql
+  * Memcached
+
+==How to write a custom backend==
+
+The custom data backend must subclass the `BaseDBObj` from `base.py` and implement the following `x` methods:
+
+  * *get_version*(*badware_type*)
+      `badware_type` is either `malware` or `black`
+
+  * *insert_version_row*(*badware_type*, *version_number*)
+      `badware_type` is either `malware` or `black`
+      `version_number` is a string (eg: 1:-1 or 1:1835)
+
+  * *update_version_row*(*badware_type*, *new_version_number*, *version_number*)
+      `badware_type` is either `malware` or `black`
+      `version_number` is a string (eg: 1:-1 or 1:1835)
+      `new_version_number` is also similar to `version_number`
+
+  * *insert_rows*(*url_hash_dict*)
+      `url_hash_dict` is a map with the `url_hash` as the key and the `badware_code` as the value.
+
+  * *delete_rows*(*url_hash_dict*)
+      `url_hash_dict` is a map with the `url_hash` as the key and the `badware_code` as the value.
+
+  * *lookup_by_md5*(*md5_hash_list*)
+      `md5_hash` is a list of hashes to be matched against the db. 
