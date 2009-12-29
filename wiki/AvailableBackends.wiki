@@ -9,7 +9,7 @@ Here is the list of currently supported database backends:
 
 ==How to write a custom backend==
 
-The custom data backend must subclass the `BaseDBObj` from `base.py` and implement the following `x` methods:
+The custom data backend must subclass the `BaseDBObj` from `base.py` and implement the following `6` methods:
 
   * *get_version*(*badware_type*)
       `badware_type` is either `malware` or `black`
